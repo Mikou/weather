@@ -19,6 +19,8 @@ function getWeather(city) {
         humidity: result.data.main.humidity,
         wind: `${result.data.wind.speed} m/s ${degreeToCompass(result.data.wind.deg)}`
       });
+    }).catch(err => {
+      reject(err);
     });
   })
 }
